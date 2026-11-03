@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>خلية | خلية النحل</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone">
+
+    <!-- الشريط العلوي: اسم اللعبة + عدد الجولات -->
+    <header class="topbar">
+      <h1 class="logo">خلية</h1>
+      <div class="rounds" aria-label="عدد الجولات">
+        <span class="rounds__label">الجولة <b id="roundNum">1</b> / <span id="roundTotal">5</span></span>
+        <div class="rounds__dots" id="roundDots"></div>
+      </div>
+    </header>
+
+    <!-- المتنافسين: اسم + صورة + نقاط + مؤشر التقدم -->
+    <section class="players">
+      <article class="player player--one" id="p1">
+        <div class="avatar" style="--p:0">
+          <div class="avatar__face">🐝</div>
+        </div>
+        <div class="player__info">
+          <span class="player__name">سلمان</span>
+          <span class="player__score"><b id="score1">0</b> نقطة</span>
+        </div>
+      </article>
+
+      <div class="vs">ضد</div>
+
+      <article class="player player--two" id="p2">
+        <div class="avatar" style="--p:0">
+          <div class="avatar__face">🦋</div>
+        </div>
+        <div class="player__info">
+          <span class="player__name">ريم</span>
+          <span class="player__score"><b id="score2">0</b> نقطة</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- الموقت -->
+    <section class="timer" aria-label="تحدي الوقت">
+      <div class="timer__head">
+        <span>تحدي الوقت</span>
+        <span class="timer__sec"><b id="timeLeft">20</b> ث</span>
+      </div>
+      <div class="timer__track"><div class="timer__fill" id="timerFill"></div></div>
+    </section>
+
+    <!-- الشبكة السداسية -->
+    <section class="board-wrap">
+      <div class="board" id="board" role="grid" aria-label="شبكة الحروف"></div>
+    </section>
+
+    <!-- شريط سفلي -->
+    <footer class="hint">
+      <span class="dot dot--one"></span> أنت
+      <span class="dot dot--two"></span> المنافس
+      <span class="hint__text">اضغط على الخلية لتكسبها</span>
+    </footer>
+
+    <!-- نتيجة الجولة / اللعبة -->
+    <div class="overlay" id="overlay" hidden>
+      <div class="overlay__card">
+        <h2 id="overlayTitle"></h2>
+        <p id="overlayText"></p>
+        <button class="btn" id="overlayBtn">التالي</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
